@@ -1,2 +1,2 @@
 # Tic-Tac-Toe
-Tic-Tac-Toe game
+Tic-Tac-Toe game, download and run with your browser
