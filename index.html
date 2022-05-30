@@ -1,0 +1,52 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="Scripts/index.js" async></script>
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <h1 class = "logo">Tic-Tac-Toe
+    <select id="selectGameMode">
+        <option value="pvp">pvp</option>
+        <option value="easy">easy</option>
+        <option value="hard">hard</option>
+    </select>
+    <select id="selectFirstPlayer">
+        <option value="player">player</option>
+        <option value="bot">bot</option> 
+    </select>
+    </h1>
+    <div class = "wrapper">
+        <div class = "playground">
+            <div class = "pannel"></div>
+            <div class = "playground__field" data-pos = "0"></div>
+            <div class = "playground__field" data-pos = "1"></div>
+            <div class = "playground__field" data-pos = "2"></div>
+            <div class = "playground__field" data-pos = "3"></div>
+            <div class = "playground__field" data-pos = "4"></div>
+            <div class = "playground__field" data-pos = "5"></div>
+            <div class = "playground__field" data-pos = "6"></div>
+            <div class = "playground__field" data-pos = "7"></div>
+            <div class = "playground__field" data-pos = "8"></div>
+        </div> 
+        <div class = "buttonsWrapper">
+            <button class = "resetbutton">Reset Game</button>
+            <button class = "resetScoreButton">Reset Score</button>
+        </div>
+        <div class = "scoreTable">
+            <div class = "playerScore" >X Score:
+                <br><p class = "scoreField" id="X">0</p>    
+            </div>
+            <div class = "playerScore" >Draws: 
+                <br><p class = "scoreField" id="Draw">0</p>
+            </div>
+            <div class = "playerScore" >O Score: 
+                <br><p class = "scoreField" id="O">0</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

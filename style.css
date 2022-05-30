@@ -1,0 +1,200 @@
+:root{
+    --body_background: #E0A96D;
+    --playground_background: #201E20;
+    --field_background: #DDC3A5;
+    --field_background_hover: grey;
+    --pannel_background: #361500;
+    --pannel_background_hover: #1C0A00;
+    --pannel_text_color: #DDC3A5;
+    --pannel_border: grey;
+    --x_color: #FC766AFF;
+    --o_color: #00539CFF;
+}
+
+@font-face{
+    font-family: logo_Font;
+    src:local('LoveYaLikeASister');  
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    background-color: var(--body_background);
+}
+
+
+.logo{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 100px;
+    font-family: 'LoveYaLikeASister';
+    margin-top: 100px;
+    color:var(--playground_background);
+    transition: all 0.2s;
+}
+.logo:hover{
+    color: black;
+    cursor: pointer;
+}
+#selectGameMode
+{
+    top:0%;
+    left:0%;
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    font-size: 50px;
+    text-align: center;
+    background-color: var(--pannel_text_color);
+    border:none;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+#selectGameMode option, #selectFirstPlayer option{
+    background-color: var(--pannel_text_color);
+}
+#selectGameMode option:checked
+{
+    display: none;
+}
+#selectFirstPlayer
+{
+    top:0%;
+    right:0%;
+    position: absolute;
+    width: 250px;
+    height: 80px;
+    font-size: 50px;
+    text-align: center;
+    background-color: var(--pannel_text_color);
+    border:none;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.playground {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--playground_background);
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    border-radius: 6px;
+}
+
+.playground__field {
+    background-color: var(--field_background);
+    transition: all 0.5s;
+    border-radius: 5px;
+    position: relative;
+}
+
+.playground__field:hover {
+    cursor: pointer;
+    background-color: var(--field_background_hover);
+}
+
+.resetbutton,.resetScoreButton {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--field_background);
+    font-size: 25px;
+    font-weight: bolder;
+    margin-top: 20px;
+    transition: all 0.5s;
+    border: none;
+}
+
+.resetbutton:hover,.resetScoreButton:hover {
+    cursor: pointer;
+    background-color: var(--field_background_hover);
+    color: var(--field_background)
+}
+
+.playground__field--clicked--X::before,
+.playground__field--clicked--X::after {
+    content: "";
+    position: absolute;
+    height: 95%;
+    width: 5%;
+    background-color: var(--x_color);
+    top: 50%;
+    left: 50%;
+}
+
+.playground__field--clicked--X::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.playground__field--clicked--X::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.playground__field--clicked--O::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid var(--o_color);
+    border-radius: 50%;
+}
+
+.pannel {
+    background-color: var(--pannel_background);
+    border-radius: 5px;
+    border: 3px solid var(--pannel_border);
+    cursor: pointer;
+    color: var(--pannel_text_color);
+    display: none;
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 500%;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+.pannel:hover {
+    background-color: var(--pannel_background_hover);
+}
+
+.scoreTable{
+    height: 200px;
+    width: 750px;
+    margin-top: 50px;
+    display:grid;
+    grid-template-columns: repeat(3,250px);
+    gap: 20px;
+}
+.playerScore{
+    height: 200px;
+    background-color: var(--field_background);
+    border: 3px solid var(--pannel_border);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bolder;
+}
+#X,#O,#Draw{
+    background-color: var(--field_background);
+    font-size: 60px;
+    margin-top: 15px;
+}
